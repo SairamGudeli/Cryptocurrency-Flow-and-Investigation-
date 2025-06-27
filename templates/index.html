@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ethereum Transaction Clustering</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f7f9;
+            padding: 40px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        h1 {
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 320px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        img {
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .address-info {
+            font-size: 18px;
+            color: #2d3436;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Ethereum Transaction KMeans Clustering</h1>
+    <form method="POST">
+        <input type="text" name="address" placeholder="Enter Ethereum Address" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    {% if address and img_data %}
+        <div class="address-info">Showing results for address: <strong>{{ address }}</strong></div>
+        <img src="data:image/png;base64,{{ img_data }}" width="700" alt="Cluster Plot">
+    {% endif %}
+</body>
+</html>
