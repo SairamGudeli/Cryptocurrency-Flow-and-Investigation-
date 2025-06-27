@@ -1,0 +1,213 @@
+<div class="card"></div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CryptoTrace</title>
+  <style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; color: #e0e0e0; background: #0e0b16; }
+
+    /* Header + Navbar */
+    header { 
+        position: relative; 
+        top: 0; 
+        width: 100%; 
+        height: 100vh; 
+        overflow: hidden; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: center; 
+    }
+    header video {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: -1;
+    }
+    nav {
+      display: flex; justify-content: space-between; padding: 20px 50px;
+      background: rgb(0, 0, 0); position: absolute; width: 100%;
+      z-index: 10;
+    }
+    nav .logo { font-size: 1.5rem; font-weight: bold; color: #fff; }
+    nav ul { display: flex; list-style: none; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a {
+      color: #fff; text-decoration: none; font-size: 1rem;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover { background: rgba(255,255,255,0.2); border-radius: 4px; }
+
+    /* Hero Text */
+    .hero-content {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); text-align: center;
+    }
+    .hero-content h1 {
+      font-size: 4rem; color:#fff; margin-bottom: 0.5rem;
+    }
+    .hero-content p {
+      font-size: 1.5rem; color:#ddd;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 50px;
+      max-width: 1200px; margin: auto;
+    }
+    h2.section-title {
+      font-size: 2.5rem; color: #fff; margin-bottom: 40px;
+      text-align: center;
+    }
+    .cards {
+      display: flex; justify-content: space-around; flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      background: #1a1336; border-radius: 8px;
+      padding: 30px; flex: 1 1 calc(33% - 40px);
+      max-width: calc(33% - 40px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      background: #2b2648;
+    }
+    .card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #b3a2ff; }
+    .card p { font-size: 1rem; line-height: 1.6; color: #ccc; }
+
+    /* Footer */
+    footer {
+      background: #1a1336; padding: 40px 50px; color: #aaa;
+      font-size: 0.9rem; margin-top: 200px;
+    }
+    footer .container {
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+    }
+    footer .col {
+      flex: 1 1 200px; margin-bottom: 20px;
+    }
+    footer .col h4 { color: #fff; margin-bottom: 10px; font-size: 1.1rem; }
+    footer .col p, .col a, .col p span {
+      color: #aaa; text-decoration: none;
+      display: block; margin-bottom: 6px;
+    }
+    footer .col a:hover { color: #fff; }
+    footer .bottom {
+      text-align: center; margin-top: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .cards { flex-direction: column; align-items: center; }
+      .card { max-width: 500px; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<!-- Header with Logo and Navbar -->
+<header>
+    <nav>
+        <div class="logo">CryptoTrace</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#detection">Detection</a></li>
+            <li><a href="#investigation">Investigation</a></li>
+        </ul>
+    </nav>
+    
+<!-- Main Section Video Background -->
+<div style="position:relative; width:100%; height:90vh; overflow:hidden; margin-top:0;">
+    <video src="C:\Users\Sairam Gudeli\Desktop\Final Year Project\CryptoTrace\assets\wallpaper.mp4" autoplay muted loop
+        style="width:100%; height:100%; object-fit:cover; display:block;"></video>
+</div>
+<div class="hero-content" id="home" style="backdrop-filter: blur(6px); background: rgba(20, 10, 40, 0.55); border-radius: 18px; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); padding: 48px 36px 40px 36px; border: 1.5px solid rgba(255,255,255,0.12);">
+    <h1 style="font-size: 4.2rem; font-weight: 800; letter-spacing: 2px; color: #b3a2ff; text-shadow: 0 4px 24px #000, 0 1px 0 #fff2;">CryptoTrace</h1>
+    <p style="font-size: 1.6rem; color: #e0e0e0; margin-top: 18px; margin-bottom: 0; font-weight: 400; letter-spacing: 1px; text-shadow: 0 2px 12px #000;">An Intelligent Tool For <span style="color:#ffb347;font-weight:600;">Transaction Flow Analysis</span></p>
+    <div style="margin-top: 36px;">
+        <a href="#detection" style="background: linear-gradient(90deg, #b3a2ff 0%, #ffb347 100%); color: #1a1336; font-weight: 700; padding: 14px 38px; border-radius: 30px; font-size: 1.15rem; text-decoration: none; box-shadow: 0 2px 16px #0005; transition: background 0.3s, color 0.3s;">
+            Get Started
+        </a>
+    </div>
+</div>
+</header>
+
+
+
+<!-- Detection Section -->
+<section id="detection" style="background:#190f2e;">
+    <h2 class="section-title">Fraud Detection Techniques</h2>
+    <div class="cards">
+        <!--
+        <div class="card">
+            <h3>Fraud Detection</h3>
+            <p>Using SVM and SMOTE, our model identifies suspicious Ethereum transactions with over 93% accuracy.</p>
+        </div>
+        -->
+        <div class="card">
+            <h3>Dark Web Monitoring</h3>
+            <p>
+                Advanced crawling and monitoring of dark‑web marketplaces and forums for cryptocurrency‑related illegal activities.<br>
+                <a href="2. fraud detection/index.html" style="color:#b3a2ff;text-decoration:underline;">Go to Dark Web Monitoring</a>
+            </p>
+        </div>
+        <div class="card">
+            <h3>Address Details</h3>
+            <p>
+            Extracts detailed transaction metrics including total Ether sent/received, time diffs, and associated wallet counts.<br>
+            <a href="3. address details/index.html" style="color:#b3a2ff;text-decoration:underline;">Go to Address Details</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+  <!-- Investigation Section -->
+<section id="investigation"></section>
+    <h2 class="section-title">Investigation Tools</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Address Intelligence</h3>
+            <p>
+            Comprehensive address profiling with transaction history, risk assessment, and entity clustering.<br>
+            <a href="4. address intelligence/index.html" style="color:#b3a2ff;text-decoration:underline;">Go to Address Intelligence</a>
+            </p>
+        </div>
+        <div class="card">
+            <h3>Visualization</h3>
+            <p>
+            Interactive visualization tools for mapping complex cryptocurrency transaction networks.<br>
+            <a href="5 visualization/index.html" style="color:#b3a2ff; text-decoration:underline;">Go to Visualization</a>
+            </p>
+        </div>
+        <!--
+        <div class="card">
+            <h3>K‑Means Clustering</h3>
+            <p>Advanced clustering algorithms to group related addresses and identify criminal networks.</p>
+        </div>
+        -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="col">
+        <h4>Ξ CryptoTrace</h4>
+        <p>Advanced Ethereum investigation platform for law enforcement and compliance professionals</p>
+      </div>
+      <div class="col">
+        <h4>Contact</h4>
+        <p><a href="mailto:sairamgudeli@gmail.com">sairamgudeli@gmail.com</a></p>
+        <p><span>+91 9604470137</span></p>
+        <p><span>Solapur, Maharashtra</span></p>
+      </div>
+    </div>
+    <div class="bottom">
+      © 2024 CryptoTrace. All rights reserved. | Advanced cryptocurrency investigation platform.
+    </div>
+  </footer>
+
+</body>
+</html>
